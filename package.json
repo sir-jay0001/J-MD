@@ -1,5 +1,5 @@
 {
-"name": "Jay-md",    
+"name": "J-md",    
 "version": "1.0.0",
 "scripts": {
 "start": "pm2 start index.js --deep-monitoring --attach --name jay",
