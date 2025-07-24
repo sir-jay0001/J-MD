@@ -1,20 +1,44 @@
-const fs = require('fs');
-if (fs.existsSync('config.env')) require('dotenv').config({ path: './config.env' });
-function convertToBool(text, fault = 'true') {
-    return text === fault ? true : false;
-}
 
+// if you're using pannel carefully edit this part.
+
+const sessionName = 'session';
+const session = process.env.SESSION || '';
+const appname = process.env.APP_NAME || '';
+const herokuapi = process.env.HEROKU_API;
+const botname = process.env.BOTNAME || '𝗝-𝗠𝗗';
+const author = process.env.STICKER_AUTHOR || '𝗕𝗢𝗧';
+const packname = process.env.STICKER_PACKNAME || '𝗝𝗠𝗗';
+const dev = process.env.DEV || '2547994597254';
+const owner = dev.split(",");
+const menulink = process.env.MENU_LINK || 'https://files.catbox.moe/duv8ac.jpg';
+const menu = process.env.MENU_TYPE || 'VIDEO';
+const bad = process.env.BAD_WORD || 'fuck';
+const admin = process.env.ADMIN_MSG || '𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗿𝗲𝘀𝗲𝗿𝘃𝗲𝗱 𝗳𝗼𝗿 𝗔𝗱𝗺𝗶𝗻𝘀!';
+const group = process.env.GROUP_ONLY_MSG || '𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗺𝗲𝗮𝗻𝘁 𝗳𝗼𝗿 𝗚𝗿𝗼𝘂𝗽𝘀!';
+const botAdmin = process.env.BOT_ADMIN_MSG || '𝗜 𝗻𝗲𝗲𝗱 𝗔𝗱𝗺𝗶𝗻 𝗽𝗿𝗲𝘃𝗶𝗹𝗲𝗱𝗴𝗲𝘀!';
+const NotOwner = process.env.NOT_OWNER_MSG || '𝗖𝗼𝗺𝗺𝗮𝗻𝗱 𝗺𝗲𝗮𝗻𝘁 𝗳𝗼𝗿 𝘁𝗵𝗲 𝗼𝘄𝗻𝗲𝗿!';
+const mycode = process.env.CODE || '254';
+const port = process.env.PORT || 8080;
+const databaseUrl = process.env.DATABASE_URL || '';
 
 module.exports = {
-SESSION_ID: process.env.SESSION_ID || 'eyJub2lzZUtleSI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiZUJ4SW1pdlE5WDl1d3B2b0tiOE16U3ExK3o4SHpDNkthZlJZQUkwbmtXRT0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiMEJ0WGZmOVdzSXpaSURpUzV1RzFZcDJPOXQ0ZnV5ZTJxUVFpejRQVDRrQT0ifX0sInBhaXJpbmdFcGhlbWVyYWxLZXlQYWlyIjp7InByaXZhdGUiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiI4TFF3OEQ2MW9qK3dXOEFxcGdNTGc0dEVBc3g1QkQxOVJSRy92NDlqODFvPSJ9LCJwdWJsaWMiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJDa05YeWJZeWVNbHErejJMYjJsRHBzY0FGZEdDdUs3WXl6ejBaMVZUbFhjPSJ9fSwic2lnbmVkSWRlbnRpdHlLZXkiOnsicHJpdmF0ZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6Ik1EUndnemJpcEZGMHlZT3hPM0VSRmZtOFhWeERVWFgrdVEzS1FGSDViMkE9In0sInB1YmxpYyI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6InZ3dmZCdE53Z0VXanh4OTRZOXF1L0d4dmY2Rkl0eUlieE5RQzhoWEE5WGs9In19LCJzaWduZWRQcmVLZXkiOnsia2V5UGFpciI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiNlBBYjJDUHByM0FOZEs3R25mRE9icjBlamY5Vjh1cFpHM3Z3S2x2YnVFUT0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiVWtrd1NpQ1daNzlJenIrYjNUSXlTdURsNlM1RkhTQUJqMmxRbGc5SHhGZz0ifX0sInNpZ25hdHVyZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IkJJay9uM3BlREhlNXJJOTB0MXZOSE5xMHREaDJjVjF0bGpTRXB4Znc3Wmo5dkJRaE5QbmEvT3NXMUdxUklRUGhEbU0wSlI2YmttTmJQNURiUHZUN2pBPT0ifSwia2V5SWQiOjF9LCJyZWdpc3RyYXRpb25JZCI6MTg1LCJhZHZTZWNyZXRLZXkiOiJKbGNxb2hvcFpENktjK2h0RW03ZW5Id2tJUG1oYkp0cFNlZ3dnQUxqM3ZNPSIsInByb2Nlc3NlZEhpc3RvcnlNZXNzYWdlcyI6W3sia2V5Ijp7InJlbW90ZUppZCI6IjI1NDcyMzU3NDk2NkBzLndoYXRzYXBwLm5ldCIsImZyb21NZSI6dHJ1ZSwiaWQiOiI4RDkyOUE5OUNDMzBCRjZGN0FFQzMwRjc5ODIyNkQwQyJ9LCJtZXNzYWdlVGltZXN0YW1wIjoxNzUzMzU3NzUyfSx7ImtleSI6eyJyZW1vdGVKaWQiOiIyNTQ3MjM1NzQ5NjZAcy53aGF0c2FwcC5uZXQiLCJmcm9tTWUiOnRydWUsImlkIjoiMUY2RjgwQ0QyOTYyRjRBNDU0NUFDMERBREZGQjcwQUQifSwibWVzc2FnZVRpbWVzdGFtcCI6MTc1MzM1Nzc1Mn0seyJrZXkiOnsicmVtb3RlSmlkIjoiMjU0NzIzNTc0OTY2QHMud2hhdHNhcHAubmV0IiwiZnJvbU1lIjp0cnVlLCJpZCI6IjJDMzE1M0I1QUUyRjAzRUMwQjYzQThBQjdCN0I2N0U5In0sIm1lc3NhZ2VUaW1lc3RhbXAiOjE3NTMzNTc3NTh9XSwibmV4dFByZUtleUlkIjozMSwiZmlyc3RVbnVwbG9hZGVkUHJlS2V5SWQiOjMxLCJhY2NvdW50U3luY0NvdW50ZXIiOjEsImFjY291bnRTZXR0aW5ncyI6eyJ1bmFyY2hpdmVDaGF0cyI6ZmFsc2V9LCJyZWdpc3RlcmVkIjp0cnVlLCJwYWlyaW5nQ29kZSI6IjJEUlBXNlIzIiwibWUiOnsiaWQiOiIyNTQ3MjM1NzQ5NjY6OEBzLndoYXRzYXBwLm5ldCIsImxpZCI6IjEwMDAyNjE0NzcyOTY1Njo4QGxpZCIsIm5hbWUiOiJqQXninIzvuI8ifSwiYWNjb3VudCI6eyJkZXRhaWxzIjoiQ01mMjZab0RFS0s3aU1RR0dBRWdBQ2dBIiwiYWNjb3VudFNpZ25hdHVyZUtleSI6IlNXeTZibC92MDZuak1FcmV4ZEVCdDJyeHRjeEgvUFhrT1gzTmZPSW1DVTg9IiwiYWNjb3VudFNpZ25hdHVyZSI6IjF1Y2JBRG10WTJ2ZVNjUDVoYVZBbEVpemVISkw0VlNkTGNqQUY4ckhwSm9xbSsxRzJON3lPaGJDY0xQZUJuVWlnZmNBZmE0UjZiKzViU29SQUhqckFnPT0iLCJkZXZpY2VTaWduYXR1cmUiOiJ3L2xXMWRnQXp3Z3laaDZuS3hCdmxrWXd3OXZCcWkzMkV2SDZxeUo5NjhZRjdZbm9iL2RqYjFWMTZ5R2JzaS8rMkw1cmR5YjdLSW5YNWdmTE5aL2NqZz09In0sInNpZ25hbElkZW50aXRpZXMiOlt7ImlkZW50aWZpZXIiOnsibmFtZSI6IjI1NDcyMzU3NDk2Njo4QHMud2hhdHNhcHAubmV0IiwiZGV2aWNlSWQiOjB9LCJpZGVudGlmaWVyS2V5Ijp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiQlVsc3VtNWY3OU9wNHpCSzNzWFJBYmRxOGJYTVIvejE1RGw5elh6aUpnbFAifX1dLCJwbGF0Zm9ybSI6ImFuZHJvaWQiLCJyb3V0aW5nSW5mbyI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IkNCSUlCUT09In0sImxhc3RBY2NvdW50U3luY1RpbWVzdGFtcCI6MTc1MzM1Nzc0NSwibGFzdFByb3BIYXNoIjoiM1I5WjM5IiwibXlBcHBTdGF0ZUtleUlkIjoiQUFBQUFQeFAifQ==',
-POSTGRESQL_URL: process.env.POSTGRESQL_URL || 'youre POSTGRESQL url',
-LANG: process.env.BOT_LANG || 'EN' ,
-ANTI_BAD: process.env.ANTI_BAD || 'false',
-MAX_SIZE: process.env.MAX_SIZE || 200,
-ONLY_GROUP: process.env.ONLY_GROUP || 'false',
-ANTI_LINK: process.env.ANTI_LINK || 'false' ,
-ANTI_BOT: process.env.ANTI_BOT || 'false',
-ALIVE: process.env.ALIVE || `default`,
-FOOTER: process.env.FOOTER ||  'J 𝙼𝙳',
-LOGO: process.env.LOGO || `https://github.com/sir-jay0001/J-MD` 
+  session,
+  sessionName,
+  author,
+  packname,
+  dev,
+  owner,
+  bad,
+  group,
+  NotOwner,
+  botname,
+  botAdmin, 
+  menu,
+  menulink,
+  admin,
+  mycode,
+  herokuapi,
+  port,
+  appname,
+  databaseUrl
 };
