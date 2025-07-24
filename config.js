@@ -15,6 +15,6 @@ ONLY_GROUP: process.env.ONLY_GROUP || 'false',
 ANTI_LINK: process.env.ANTI_LINK || 'false' ,
 ANTI_BOT: process.env.ANTI_BOT || 'false',
 ALIVE: process.env.ALIVE || `default`,
-FOOTER: process.env.FOOTER ||  'Jay 𝙼𝙳',
-LOGO: process.env.LOGO || `https://github.com/jayden-official/JAY-MD-BOT` 
+FOOTER: process.env.FOOTER ||  'J 𝙼𝙳',
+LOGO: process.env.LOGO || `https://github.com/sir-jay0001/J-MD` 
 };
