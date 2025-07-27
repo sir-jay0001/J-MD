@@ -1,10 +1,10 @@
 {
-  "name": "RAVEN-BOT",
+  "name": "J-MD",
   "description": "A simple yet complicated WhatsApp bot, ♤Enjoy♡",
   "keywords": [
     "bot",
     "whatsapp",
-    "raven",
+    "jmd",
     "whatsapp-stickers",
     "anime",
     "whatsapp-bot",
@@ -14,13 +14,13 @@
     "baileys-md",
     "md-bot"
   ],
-  "website": "https://github.com/HunterNick2/RAVEN-BOT#readme",
-  "repository": "https://github.com/HunterNick2/RAVEN-BOT.git",
+  "website": "https://github.com/sir-jay0001/J-MD#readme",
+  "repository": "https://github.com/sir-jay0001/J-MD.git",
   "logo": "https://files.catbox.moe/duv8ac.jpg",
   "success_url": "/",
   "env": {
     "DEV": {
-      "description": "Put any phone numbers you want to be bot owner without + or spaces \",\" Ex: 254114660061,27849061633",
+      "description": "Put any phone numbers you want to be bot owner without + or spaces \",\" Ex: 254794597254,254723574966",
       "required": true
     },
     "HEROKU_API": {
