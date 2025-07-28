@@ -1,135 +1,111 @@
+
 {
-  "name": "J-Md",
-  "description": "whatsapp bot developed by sir-jay0001",
-  "keywords": [
-    "bot",
-    "node",
-    "baileys",
-    "whatsapp"
-  ],
-  "logo": "https://raw.githubusercontent.com/sir-0001/J-Md/main/Jmd.jpg",
-  "repository": "https://github.com/sir-jay0001/J-Md",
-  "succes_url": "/",
-  "stack": "container",
+  "name": "J-MD",
+  "description": "A WhatsApp bot powered by Baileys.",
+  "repository": "https://github.com/sir-jay0001/J-MD",
+  "stack": "heroku-24",
+  "scripts": {
+    "postdeploy": "echo 'Deployment complete!'"
+  },
   "env": {
+    "SESSION": {
+      "description": "J MD session string (required for WhatsApp login)",
+      "required": true
+    },
     "PREFIX": {
-      "description": "choose your prefix",
-      "value": "#",
-      "required": true
-    },
-    "AUTO_READ_STATUS": {
-      "description": "the bot will automatically read all statuses (yes to enable, no to disable)",
-      "value": "yes",
-      "required": false
-    },
-    "AUTO_DOWNLOAD_STATUS": {
-      "description": "the bot will automatically download all statuses (yes to enable, no to disable)",
-      "value": "yes",
-      "required": false
-    },
-    "BOT_NAME": {
-      "description": "A name for your bot",
-      "value": "J-MD",
-      "required": false
-    },
-    "MENU_THEME": {
-      "description": "Add one or more image or video links for your bot; example: link1,link2,link3......\n Or put the name of a THEME among the available themes",
-      "value": "ELIE",
-      "required": false
-    },
-    "PM_PERMIT": {
-      "description": "Commands will not work in private for other users (yes to enable, no to disable)",
-      "value": "no",
-      "required": false
-    },
-    "MODE_PUBLIC": {
-      "description": "yes for public mode or no for private mode (in this case, only you will use the bot)",
-      "value": "yes",
-      "required": false
-    },
-    "HEROKU_API_KEY": {
-      "description": "insert your heroku account apikey",
-      "required": false
-    },
-    "HEROKU_APP_NAME": {
-      "description": "insert the name you entered (APP NAME) at the very beginning of the page",
-      "required": false
-    },
-    "PRESENCE": {
-      "description": "mark your presence: 1 to show you are online even if you are not. 2 to show you are typing a message. 3 to show you are recording an audio. Or leave the field empty to show your real status.",
-      "value": "1",
-      "required": false
-    },
-    "SESSION_ID": {
-      "description": "please enter your session id",
-      "value": "",
-      "required": true
-    },
-    "OWNER_NAME": {
-      "description": "Your name",
+      "description": "Comma-separated list of command prefixes (e.g. !, /)",
       "required": false,
-      "value": "Sirjay"
+      "value": "!"
     },
-    "OWNER_NUMBER": {
-      "description": "Your phone number; it must be in the format ID+number",
+    "YOUR_NUMBER": {
+      "description": "Your WhatsApp number in international format (e.g. 254794597254)",
       "required": false,
       "value": "254794597254"
     },
-    "WARN_COUNT": {
-      "description": "this is the warning limit count",
+    "MODE": {
+      "description": "Bot mode: 'private' or 'public'",
+      "required": false,
+      "value": "public"
+    },
+    "WARNINGS": {
+      "description": "Number of warnings before action is taken",
       "required": false,
       "value": "3"
     },
-    "STARTING_BOT_MESSAGE": {
-      "description": "Put yes if you want to receive the bot's starting message in private or no if you don't want it",
-      "required": true,
-      "value": "yes"
-    },
-    "PM_CHATBOT": {
-      "description": "Put yes if you want the bot to automatically reply to private messages",
+    "YOUR_NAME": {
+      "description": "Your name or bot owner name",
       "required": false,
-      "value": "no"
+      "value": "J-MD"
     },
-    "ANTI_COMMAND_SPAM": {
-      "description": "Add a one-minute cooldown after each command for other users (to enable, choose *yes*)",
+    "ANTICALL": {
+      "description": "Block incoming calls (on/off)",
       "required": false,
-      "value": "no"
+      "value": "on"
     },
-    "ANTI_DELETE_MESSAGE": {
-      "description": "Put yes if you want messages deleted by other users to be sent to you in private",
+    "ANTIDELETE": {
+      "description": "Enable anti-delete for messages (on/off)",
       "required": false,
-      "value": "no"
+      "value": "on"
     },
-    "AUTO_REACT_MESSAGE": {
-      "description": "Put yes if you want messages to be automatically reacted to",
+    "AUTO_REACTION": {
+      "description": "Enable auto-reaction to messages (on/off)",
       "required": false,
-      "value": "no"
+      "value": "off"
     },
-    "AUTO_REACT_STATUS": {
-      "description": "Enable automatic reactions to statuses (yes/no)",
+    "AUTO_READ_STATUS": {
+      "description": "Enable auto view of status updates (on/off)",
       "required": false,
-      "value": "no"
+      "value": "off"
     },
-    "TIME_ZONE": {
-      "description": "Bot time zone",
+    "AUTO_LIKE": {
+      "description": "Enable auto-like on status updates (on/off)",
+      "required": false,
+      "value": "off"
+    },
+    "AUTO_READ_DM": {
+      "description": "Enable auto-read of direct messages (on/off)",
+      "required": false,
+      "value": "off"
+    },
+    "HEROKU_API_KEY": {
+      "description": "Your Heroku API key (for automatic restart or deploy)",
+      "required": false
+    },
+    "HEROKU_APP_NAME": {
+      "description": "Your Heroku app name",
+      "required": false
+    },
+    "PRESENCE_DM": {
+      "description": "Bot presence status in DMs (typing, online, recording, paused, offline)",
+      "required": false,
+      "value": "typing"
+    },
+    "PRESENCE_GROUP": {
+      "description": "Bot presence status in groups (typing, online, recording, paused, offline)",
+      "required": false,
+      "value": "recording"
+    },
+    "YOUR_LID": {
+      "description": "Your WhatsApp Lid (used for advanced features or admin control)",
+      "required": false,
+      "value": ""
+    },
+    "timezone": {
+      "description": "Timezone for scheduling or logging",
       "required": false,
       "value": "Africa/Nairobi"
-    },
-    "SERVER": {
-      "description": "Server name",
-      "required": false,
-      "value": "HEROKU"
-    },
-    "STICKER_PACKNAME": {
-      "description": "Sticker pack name",
-      "required": false,
-      "value": "made with ❤; J-MD"
     }
   },
   "formation": {
-    "worker": {
+    "web": {
       "quantity": 1,
-      "size": "basic"
+      "size": "Basic"
     }
-  }
+  },
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
 }
