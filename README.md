@@ -25,7 +25,7 @@
 
 ---
 
-<a><img src='https://i.imgur.com/LyHic3i.gif'/></a>
+<a><img src='https://files.catbox.moe/p4vhvx.jpg'/></a>
 
 
   <p align="center">
