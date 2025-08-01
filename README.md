@@ -42,7 +42,7 @@
 ---
 ### 🔵 FORK 
 <p align="centre">
-<a href="https://github.com/sir-jay0001/J-MD/fork"><img src="https://img.shields.io/badge/Fork%20Create-purple?style=for-the-badge&logo=github" alt="FORK J-MD" width="160"></a>
+<a href="https://github.com/sir-jay0001/J-MD/fork"><img src="https://img.shields.io/badge/Create%20Fork-purple?style=for-the-badge&logo=github" alt="FORK J-MD" width="160"></a>
 <p/>
 
 ---
@@ -54,7 +54,10 @@
 
 ---
 ### 🔴 QR CODE  
-[![qr](https://github.com/sir-jay0001/J-MD-DATA/raw/refs/heads/main/baton/qr_code.png)](https://bmb-tech-pair-site.onrender.com/QR)
+<p align="centre">
+<a href="https://mysession-production-c284.up.railway.app/qr">
+  <img title="GET SESSION OPT 1" src="https://img.shields.io/badge/⏳_SCAN_J_MD-000000?style=for-the-badge&logo=jmd&logoColor=greem&color=lightgreen" width="160" height="50"/>
+<p/>
 
 ---
 
