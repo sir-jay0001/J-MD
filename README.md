@@ -97,5 +97,12 @@
 <br>
   <a href="https://chat.whatsapp.com/L35cdHElWnyDkqc5uTjs0U?mode=ac_t">
     <img src="https://img.shields.io/badge/Join%20WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=darkgreen" alt="WHATSAPP"/>
+    
+### ⭐ SUPPORT OUR PROJECT
+> Every ⭐ star and fork makes a big difference — thank you for supporting **J-MD**!
+
+> Powered by Sir Jay 
+---
+
   
 </div>
