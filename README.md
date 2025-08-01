@@ -67,7 +67,7 @@
 ### 🟣 HEROKU  
 <p align="center">
   <a href="https://dashboard.heroku.com/new?template=https://github.com/sir-jay0001/J-MD/">
-       <img title="DEPLOY J MD" src="https://img.shields.io/badge/🚀_DEPLOY_ON_HEROKU-000000?style=for-the-badge&logo=heroku&logoColor=white&color=FF00FF" width="160" height="50"/>
+       <img title="DEPLOY J MD" src="https://img.shields.io/badge/🚀_DEPLOY_ON_HEROKU-000000?style=for-the-badge&logo=heroku&logoColor=white&color=FF00FF" width="200" height="50"/>
      </a>
  </p>
 
