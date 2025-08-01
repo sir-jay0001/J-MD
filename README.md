@@ -49,7 +49,7 @@
 ### ⚪ PAIR  
 <p align="centre">
 <a href="https://mysession-production-c284.up.railway.app/pair">
-  <img title="GET SESSION OPT 1" src="https://img.shields.io/badge/🔑_PAIR_J_MD-000000?style=for-the-badge&logo=jmd&logoColor=white&color=skyblue" width="160" height="20"/>
+  <img title="GET SESSION OPT 1" src="https://img.shields.io/badge/🔑_PAIR_J_MD-000000?style=for-the-badge&logo=jmd&logoColor=white&color=skyblue" width="160" height="50"/>
 <p/>
 
 ---
