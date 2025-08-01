@@ -37,7 +37,9 @@
 
 ---
 ### 🟢 FOLLOW 
-[![GITHUB](https://github.com/sir-jay0001/J-MD-DATA/raw/refs/heads/main/baton/follow_dev.png)](https://github.com/sir-jay0001)
+<p align="centre">
+<a href="https://github.com/sir-jay0001/J-MD/follow"><img src="https://img.shields.io/badge/Follow%20Me-violet?style=for-the-badge&logo=github" alt="FOLLOW J-MD" width="160"></a>
+<p/>
 
 ---
 ### 🔵 FORK 
