@@ -94,7 +94,7 @@
 <p align="left">
   <a href="https://api.whatsapp.com/send?phone=254794597254&text=Hello+Sir+dev+i+need+your+Help+on..."><img src="https://img.shields.io/badge/Contact%20Jay-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   </a>
-<p align="right">
+<br>
   <a href="https://chat.whatsapp.com/L35cdHElWnyDkqc5uTjs0U?mode=ac_t">
     <img src="https://img.shields.io/badge/Join%20WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=darkgreen" alt="WHATSAPP"/>
   
