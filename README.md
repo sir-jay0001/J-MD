@@ -47,7 +47,10 @@
 
 ---
 ### ⚪ PAIR  
-
+<p align="centre">
+<a href="https://mysession-production-c284.up.railway.app">
+  <img title="GET SESSION OPT 1" src="https://img.shields.io/badge/🔑_GET_J_SESSION-000000?style=for-the-badge&logo=hyperbot&logoColor=white&color=skyblue" width="260" height="50"/>
+<p/>
 
 ---
 ### 🔴 QR CODE  
