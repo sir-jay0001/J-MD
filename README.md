@@ -87,6 +87,8 @@
   <a href="https://render.com">
     <img title="DEPLOY ON RENDER" src="https://img.shields.io/badge/🚀_DEPLOY_ON_RENDER-000000?style=for-the-badge&logo=render&logoColor=white&color=61DAFB" width="200" height="50"/>
   </a>
+</p>
+
 ---
 ### ☎️ CONTACT US
 <p align="left">
