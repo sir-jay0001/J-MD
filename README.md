@@ -47,7 +47,7 @@
 
 ---
 ### ⚪ PAIR  
-[![pair](https://github.com/sir-jay0001/J-MD-DATA/raw/refs/heads/main/baton/pair_site.png)](https://bmb-tech-pair-site.onrender.com/wasiqr)
+
 
 ---
 ### 🔴 QR CODE  
