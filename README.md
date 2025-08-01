@@ -81,5 +81,9 @@
 
 ---
 ### 🔴 RENDER  
-[![Render](https://github.com/sir-jay0001/J-MD-DATA/raw/refs/heads/main/baton/deploy_render.png)](https://dashboard.render.com/web/new)
+<p align="center">
+  <a href="https://render.com">
+    <img title="DEPLOY ON RENDER" src="https://img.shields.io/badge/🚀_DEPLOY_ON_RENDER-000000?style=for-the-badge&logo=render&logoColor=white&color=61DAFB" width="200" height="50"/>
+  </a>
+  
 </div>
