@@ -19,7 +19,7 @@
 <!-- Banner Image -->
 <p align="center">
   <a href="https://github.com/sir-jay0001/J-MD-DATA/raw/refs/heads/main/bmb.jpg">
-    <img src="https://files.catbox.moe/p4vhvx.jpg" width="100%" height="auto">
+    <img src="https://files.catbox.moe/p4vhvx.jpg" width="70%" height="auto">
   </a>
 </p>
 
@@ -41,7 +41,9 @@
 
 ---
 ### 🔵 FORK 
-[![fork](https://github.com/sir-jay0001/J-MD-DATA/raw/refs/heads/main/baton/fork_repo.png)](https://github.com/sir-jay0001/SMART-BOT/fork)
+<p align="centre">
+<a href="https://github.com/sir-jay0001/J-MD/fork"><img src="https://img.shields.io/badge/Fork%20Create-purple?style=for-the-badge&logo=github" alt="FORK J-MD" width="160"></a>
+<p/>
 
 ---
 ### ⚪ PAIR  
