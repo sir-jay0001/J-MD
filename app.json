@@ -1,14 +1,14 @@
 {
-  "name": "DML-MD",
-  "description": "An Advanced Whatsapp bot 🚀 built for fast automation, media tool, and smooth group management developed by Daudy Musa",
+  "name": "J-MD",
+  "description": "An Advanced Whatsapp bot 🚀 built for fast automation",
   "logo": "https://files.catbox.moe/vcdwmp.jpg",
-  "keywords": ["DML-MD"],
+  "keywords": ["J-MD"],
   "success_url": "/",
 
     "stack": "container",
   "env": {
     "SESSION_ID": {
-      "description": "Put the session-id here.",
+      "description": "Put your session-id here.",
       "required": true,
       "value": ""
     },  
@@ -16,7 +16,7 @@
     "STICKER_NAME": {
       "description": "type your sticker pack name.",
       "required": false,
-      "value": "DML-MD"
+      "value": "J-MD"
     }, 
       
     "PREFIX": {
@@ -78,27 +78,27 @@
     "AUTO_STATUS_MSG": {
       "description": "Type custom message on status reply",
       "required": true,
-      "value": "*SEEN YOUR STATUS BY DML-MD 🇹🇿*"
+      "value": "*SEEN YOUR STATUS BY J-MD 🇰🇪*"
    
      }, 
     
     "OWNER_NAME": {
       "description": "Type Bot Owner Name.",
       "required": false,
-      "value": "DML-TECH"
+      "value": "SIR-JAY"
 }, 
 
     "OWNER_NUMBER": {
       "description": "put the owner number for bot.",
       "required": false,
-      "value": "255622220680"
+      "value": "254794597254"
 
     }, 
 
     "BOT_NAME": {
       "description": "Type here the bot name.",
       "required": false,
-      "value": "DML-MD"
+      "value": "J-MD"
 
       }, 
 
@@ -137,7 +137,7 @@
      "DESCRIPTION": {
       "description": "add caption for menu and other",
       "required": false,
-      "value": "*© POWERED BY DML-TECH*"
+      "value": "*© POWERED BY J-BOT*"
     },
 
       "DELETE_LINKS": {
