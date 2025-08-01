@@ -1,0 +1,70 @@
+const { zokou } = require(__dirname + "/../framework/zokou");
+const { format, styletext } = require(__dirname + "/../framework/mesfonctions");
+const os = require('os');
+const moment = require("moment-timezone");
+const s = require(__dirname + '/../set');
+
+zokou({
+  nomCom: "menu6",
+  categorie: "General"
+}, async (dest, zk, commandeOptions) => {
+  const { ms, repondre } = commandeOptions;
+  const { cm } = require(__dirname + "/../framework/zokou");
+
+  let commandCategories = {};
+  let mode = s.MODE.toLowerCase() !== 'oui' ? 'privé' : 'public';
+
+  const emojis = {
+    'General': '🌐',
+    'Logo': '🎨',
+    'Hentai': '🔥',
+    'Weeb': '🌸',
+    'Recherche': '🔍',
+    'Conversion': '🌟',
+    'Groupe': '♻️',
+    'Autre': '🪖'
+  };
+
+  cm.map((cmd) => {
+    if (!commandCategories[cmd.categorie]) {
+      commandCategories[cmd.categorie] = [];
+    }
+    commandCategories[cmd.categorie].push(cmd.nomCom);
+  });
+
+  moment.tz.setDefault("Asia/Karachi").locale('fr');
+  const currentTime = moment().format("HH:mm:ss");
+  const currentDate = moment().format("DD/MM/YYYY");
+
+  let menuText = "╩═══ * Ƶ𝓞ｋØ𝓊 * ╩═══\n\n";
+  menuText += `╔════---------\n
+║    Préfixe : ${s.PREFIXE}
+║    Owner : ${s.OWNER_NAME}
+║    Mode : ${mode}
+║    Commandes: ${cm.length}
+║    Date : ${currentDate}
+║    Heure : ${currentTime}
+║    Mémoire : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
+║    Plateforme : ${os.platform()}
+║    Développeurs : Djalega++ || Luffy
+╚════---------------\n\n`;
+
+  for (const categorie in commandCategories) {
+    const icon = emojis[categorie] || '💞';
+    menuText += `${icon} ══ *${categorie}* ══ ${icon}\n`;
+    commandCategories[categorie].forEach(cmd => {
+      menuText += `\t  ║ ${cmd}\n`;
+    });
+  }
+
+  try {
+    await zk.sendMessage(dest, {
+      image: { url: s.IMAGE_MENU },
+      caption: menuText,
+      footer: "by Djalega++"
+    }, { quoted: ms });
+  } catch (err) {
+    console.error("🥵🥵 Menu erreur", err);
+    repondre("🥵🥵 Menu erreur " + err);
+  }
+});
